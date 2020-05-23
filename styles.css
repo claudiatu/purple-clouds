@@ -1,0 +1,151 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 4.5vw; /* All other fonts and weights are based on this. */
+  line-height: 1.8em;
+  font-weight: 300;
+  color: white;
+  background: url('bkg.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.page {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: space-between;
+  height: auto;
+}
+
+.content {
+  margin-bottom: 5%;
+}
+
+.section {
+  width: auto;
+  display: flex;
+  margin-left: 20%;
+  margin-bottom: 5%;
+}
+
+.intro {
+  display: flex;
+  margin-top: 20%;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+
+.name {
+  font-size: 8vw;
+  line-height: 1.7em;
+}
+
+.tag h3 {
+  font-size: 7vw;
+  font-style: italic;
+  font-weight: 400;
+}
+
+.navi {
+  display: flex;
+  padding-left: 0.5%;
+  font-size: 1em;
+}
+
+.footer {
+  font-size: 0.5em;
+  line-height: normal;
+}
+
+a {
+  background:
+     linear-gradient(
+       to bottom, #4f305dad 0%, #4f305dff 100%
+     );
+    background-position: 0 100%;
+    background-repeat: repeat-x;
+    background-size: 0.1em 0.1em;
+  color: #fff;
+  text-decoration: none;
+  transition: background-size .2s;
+}
+
+a:hover {
+  background-size: 1em 1.5em;
+}
+
+ul {
+  list-style: none;
+  position: relative;
+}
+
+ul li::before{
+  font-size: 1em;
+  content: "→";
+  position: absolute;
+  left: -2em;
+  opacity: 0%;
+  transition: all 0.5s ease-out;
+}
+
+ul li:hover::before {
+  opacity: 100%;
+  left: -1em;
+}
+
+/* Mobile Styles */
+@media only screen and (max-width: 600px) {
+  .navi {
+    font-size: 30px;
+    line-height: normal;
+  }
+
+  .footer {
+    font-size: 20px;
+  }
+}
+
+/* Tablet Styles */
+@media only screen and (min-width: 401px) and (max-width: 960px) {
+}
+
+/* Desktop Styles */
+@media only screen and (min-width: 961px) {
+  body {
+    font-size: 40px;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+  }
+
+  .page {
+    width: 960px;
+  }
+
+  .intro {
+    flex-direction: row;
+  }
+
+  .name {
+    font-size: 1.5em;
+    padding-right: 0.5em;
+    white-space: nowrap;
+  }
+
+  .tag {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    white-space: nowrap;
+  }
+
+  .tag h3 {
+    font-size: 1em;
+  }
+}
